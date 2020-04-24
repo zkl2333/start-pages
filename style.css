@@ -1,13 +1,11 @@
-/** @format */
-
 .heading {
 	font-size: 16px;
 }
 
-ul {
-	padding-left: 10px;
-}
-
 .subtitle {
 	font-size: 25px;
+}
+
+.child {
+	margin: 0.5em 0.75em;
 }
