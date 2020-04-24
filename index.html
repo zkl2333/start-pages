@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -10,9 +8,15 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"
 		/>
 		<link rel="stylesheet" href="./style.css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.child {
+				margin: 0.5em 0.75em;
+			}
+		</style>
 	</head>
 	<body>
-		<section class="section">
+		<section id="app" class="section">
 			<div class="container">
 				<h1 class="title">
 					Hello Vincent!
@@ -22,85 +26,20 @@
 					资源导航
 				</p>
 				<div class="columns">
-					<div class="column">
+					<div v-for="lists in nav" class="column">
 						<div class="menu">
-							<h3 class="heading">内部资源</h3>
+							<h3 class="heading">{{lists.name}}</h3>
 							<ul class="menu-list">
-								<li>
-									<a href="http://192.168.3.100:9001/"
-										>小程序原型图</a
-									>
+								<!-- 如果是列表 -->
+								<li v-if="lists.list" v-for="list in lists.list">
+									<a :href="list.src">{{list.title}}</a>
 								</li>
-								<li>
-									<a href="http://192.168.3.100:9003/"
-										>小程序接口工具</a
-									>
-								</li>
-								<li>
-									<a href="http://192.168.3.100:8088/zentao/"
-										>禅道</a
-									>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="column">
-						<div class="menu">
-							<h3 class="heading">设计资源</h3>
-							<ul class="menu-list">
-								<li>
-									<a href="https://dribbble.com/">dribbble</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="column">
-						<div class="menu">
-							<h3 class="heading">前端资源</h3>
-							<ul class="menu-list"></ul>
-						</div>
-					</div>
-					<div class="column">
-						<div class="menu">
-							<h3 class="heading">文档</h3>
-							<ul class="menu-list">
-								<li>
-									<p>小程序</p>
-									<ul>
-										<li>
-											<a
-												href="https://developers.weixin.qq.com/miniprogram/dev/api/"
-												>小程序 Docs</a
-											>
-										</li>
-										<li>
-											<a
-												href="https://youzan.github.io/vant-weapp/"
-												>vant-weapp</a
-											>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<p>git-svn</p>
-									<ul>
-										<li>
-											<a
-												href="https://git-scm.com/docs/git-svn"
-												>git-svn 官方文档</a
-											>
-										</li>
-										<li>
-											<a
-												href="https://blog.csdn.net/wuheshi/article/details/78247296"
-												>git-svn 教程</a
-											>
-										</li>
-										<li>
-											<a
-												href="https://www.cnblogs.com/h2zZhou/p/6136948.html"
-												>git-svn 教程2</a
-											>
+								<!-- 如果有子节点 -->
+								<li class="child" v-if="lists.child" v-for="child in lists.child">
+									<p>{{child.title}}</p>
+									<ul class="menu-list">
+										<li v-for="list in child.list">
+											<a :href="list.src">{{list.title}}</a>
 										</li>
 									</ul>
 								</li>
@@ -110,5 +49,6 @@
 				</div>
 			</div>
 		</section>
+		<script src="/main.js"></script>
 	</body>
 </html>

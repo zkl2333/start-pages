@@ -3,25 +3,11 @@
 	"useTabs": true,
 	"tabWidth": 4,
 	"bracketSpacing": true,
-	"endOfLine": "lf",
 	"jsxBracketSameLine": true,
-	"requirePragma": false,
-	"insertPragma": true,
+	"printWidth": 100,
+	"trailingComma": "none",
+	"arrowParens": "avoid",
 	"overrides": [
-		{
-			"files": "*.js",
-			"options": {
-				"arrowParens": "always"
-			}
-		},
-		{
-			"files": "*.php",
-			"options": {
-				"parser": "php",
-				"singleQuote": true,
-				"trailingComma": "all"
-			}
-		},
 		{
 			"files": ".prettierrc",
 			"options": { "parser": "json" }
