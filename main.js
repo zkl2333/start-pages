@@ -82,6 +82,59 @@ const app = new Vue({
 					}
 				}
 			}
+		},
+		dropStyle: {
+			"background-color": "inherit",
+			"background-origin": "padding-box"
+		}
+	},
+	methods: {
+		//可以放置
+		allowDrop(e) {
+			e.preventDefault();
+			this.dropStyle = {
+				"background-color": "#eee"
+			};
+		},
+		//开始拖动
+		dragStart(e, list, index) {
+			let target = list[index];
+			// this.dropStyle = {
+			// 	"background-color": "#eee"
+			// };
+			e.dataTransfer.setData("text/html", `<a href="${target.src}">${target.title}</a>`);
+			e.dataTransfer.setData("text/uri-list", `#${target.title}\n${target.src}`);
+			e.dataTransfer.setData("text/plain", target.src);
+			this.dragingCallBack = () => {
+				list.splice(index, 1);
+			};
+		},
+		dragEnd() {
+			this.dropStyle = {
+				"background-color": "inherit"
+			};
+			this.dragingCallBack = undefined;
+		},
+		//放置
+		drop(e, obj) {
+			this.allowDrop(e);
+			this.dropStyle = { "background-color": "inherit" };
+			let htmlStr = e.dataTransfer.getData("text/html");
+			let cb = this.dragingCallBack;
+			if (cb) {
+				cb();
+			}
+			if (htmlStr) {
+				let el = document.createElement("div");
+				el.innerHTML = htmlStr;
+				let a = el.getElementsByTagName("a")[0];
+				if (a) {
+					obj.list.push({
+						title: a.innerText,
+						src: a.href
+					});
+				}
+			}
 		}
 	}
 });

@@ -5,7 +5,7 @@
 		<title>New Tab</title>
 		<link href="https://cdn.bootcss.com/bulma/0.8.2/css/bulma.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="./style.css" />
-		<script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/vue/2.6.11/vue.js"></script>
 	</head>
 	<body>
 		<section id="app" class="section">
@@ -19,19 +19,40 @@
 				</p>
 				<div class="columns">
 					<div v-for="lists in nav" class="column">
-						<div class="menu">
+						<div
+							class="menu"
+							@drop.stop="drop($event, lists)"
+							@dragover="allowDrop"
+							:style="dropStyle"
+						>
 							<h3 class="heading">{{lists.name}}</h3>
 							<ul class="menu-list">
 								<!-- 如果是列表 -->
-								<li v-if="lists.list" v-for="list in lists.list">
+								<li
+									v-if="lists.list"
+									v-for="(list, index) in lists.list"
+									@dragstart="dragStart($event, lists.list, index)"
+									@dragEnd="dragEnd"
+								>
 									<a :href="list.src">{{list.title}}</a>
 								</li>
 								<!-- 如果有子节点 -->
-								<li class="child" v-if="lists.child" v-for="child in lists.child">
+								<li
+									class="child drop"
+									v-if="lists.child"
+									v-for="(child, key) in lists.child"
+									@drop.stop="drop($event, child)"
+									:style="dropStyle"
+								>
 									<p>{{child.title}}</p>
 									<ul class="menu-list">
-										<li v-for="list in child.list">
-											<a :href="list.src">{{list.title}}</a>
+										<li
+											draggable="true"
+											v-for="(item, index) in child.list"
+											@dragstart="dragStart($event, child.list, index)"
+											@dragEnd="dragEnd"
+										>
+											<a draggable="false" :href="item.src">{{item.title}}</a>
 										</li>
 									</ul>
 								</li>
