@@ -1,0 +1,17 @@
+{
+	"name": "start-pages",
+	"version": "1.0.0",
+	"description": "一个简单的导航页",
+	"main": "main.js",
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": "git+https://github.com/zkl2333/start-pages.git",
+	"author": "zkl2333",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/zkl2333/start-pages/issues"
+	},
+	"homepage": "https://github.com/zkl2333/start-pages#readme"
+}
