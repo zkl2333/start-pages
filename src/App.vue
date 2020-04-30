@@ -13,20 +13,12 @@
 							</div>
 						</div>
 						<footer class="card-footer">
-							<a href="#" class="card-footer-item has-text-danger" @click="reset"
-								>重置</a
-							>
-							<a href="#" class="card-footer-item has-text-grey" @click="closeModal"
-								>取消</a
-							>
+							<a href="#" class="card-footer-item has-text-danger" @click="reset">重置</a>
+							<a href="#" class="card-footer-item has-text-grey" @click="closeModal">取消</a>
 						</footer>
 					</div>
 				</div>
-				<button
-					@click="closeModal"
-					class="modal-close is-large"
-					aria-label="close"
-				></button>
+				<button @click="closeModal" class="modal-close is-large" aria-label="close"></button>
 			</div>
 		</div>
 		<navbar @reset="activeModal = true" />
@@ -35,17 +27,10 @@
 			<div class="container">
 				<h1 class="title">Hello {{ user.name }}!</h1>
 				<br />
-				<p class="subtitle">
-					资源导航
-				</p>
+				<p class="subtitle">资源导航</p>
 				<div class="columns">
 					<div v-for="group in nav" :key="group.name" class="column">
-						<div
-							class="menu"
-							@drop.stop="drop($event, group)"
-							@dragover="allowDrop"
-							:style="dropStyle"
-						>
+						<div class="menu" @drop.stop="drop($event, group)" @dragover="allowDrop" :style="dropStyle">
 							<h3 class="heading">{{ group.name }}</h3>
 							<ul class="menu-list">
 								<!-- 如果是列表 -->
@@ -57,7 +42,7 @@
 										@saveTitle="link.title = $event"
 										:key="link.title"
 										:link="link"
-										@removrLink="group.list.splice(index, 1)"
+										@removLink="group.list.splice(index, 1)"
 									/>
 								</template>
 								<!-- 如果有子节点 -->
@@ -78,7 +63,7 @@
 												@saveTitle="link.title = $event"
 												:link="link"
 												:key="index"
-												@removrLink="child.list.splice(index, 1)"
+												@removLink="child.list.splice(index, 1)"
 											/>
 										</ul>
 									</li>
@@ -352,12 +337,12 @@ export default {
 			this.dragingCallBack = () => {
 				list.splice(index, 1);
 			};
+			this.dragingCallBack.data = target;
 		},
 		dragEnd() {
 			this.dropStyle = {
 				"background-color": "inherit"
 			};
-			this.dragingCallBack = undefined;
 		},
 		//放置
 		drop(e, obj) {
@@ -368,9 +353,11 @@ export default {
 			let plain = e.dataTransfer.getData("text/plain");
 			let cb = this.dragingCallBack;
 			if (cb) {
+				obj.list.push(cb.data);
 				cb();
-			}
-			if (htmlStr) {
+				this.dragingCallBack = undefined;
+			} else if (htmlStr && htmlStr != "") {
+				this.notify("html");
 				let el = document.createElement("div");
 				el.innerHTML = htmlStr;
 				let a = el.getElementsByTagName("a")[0];
@@ -382,10 +369,13 @@ export default {
 				}
 			} else if (uriList || plain) {
 				let url = e.dataTransfer.getData("URL");
-				obj.list.push({
-					title: url,
-					url: url
-				});
+				if (url != "") {
+					this.notify("url");
+					obj.list.push({
+						title: url,
+						url: url
+					});
+				}
 			}
 		},
 		handleInput(e, list, index) {
@@ -404,7 +394,7 @@ export default {
 		},
 		notify(msg) {
 			let length = this.notifications.push(msg);
-			setTimeout(() => {
+			setTimeout(length => {
 				this.closeNotifications(length - 1);
 			}, 1000);
 		},
@@ -415,7 +405,6 @@ export default {
 	watch: {
 		nav: {
 			handler(nav, oldNav) {
-				console.log(nav, oldNav);
 				if (JSON.stringify(oldNav) != "{}")
 					putUser(this.db, { name: this.user.name, nav }, this.user.uid).then(() => {
 						this.notify("已保存");
