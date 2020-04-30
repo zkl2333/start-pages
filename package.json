@@ -1,0 +1,56 @@
+{
+	"name": "start-pages",
+	"version": "1.0.0",
+	"description": "一个简单的导航页",
+	"main": "main.js",
+	"dependencies": {
+		"core-js": "^3.6.4",
+		"sass-loader": "^8.0.2",
+		"vue": "^2.6.11"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "^4.3.0",
+		"@vue/cli-plugin-eslint": "^4.3.0",
+		"@vue/cli-service": "^4.3.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^6.7.2",
+		"eslint-plugin-vue": "^6.2.2",
+		"node-sass": "^4.14.0",
+		"vue-template-compiler": "^2.6.11"
+	},
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint"
+	},
+	"eslintConfig": {
+		"root": true,
+		"env": {
+			"node": true
+		},
+		"extends": [
+			"plugin:vue/essential",
+			"eslint:recommended"
+		],
+		"parserOptions": {
+			"parser": "babel-eslint"
+		},
+		"rules": {
+			"no-unused-vars": "warn",
+			"vue/no-unused-vars": "warn",
+			"vue/require-v-for-key": "warn"
+		}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	],
+	"repository": "git+https://github.com/zkl2333/start-pages.git",
+	"author": "zkl2333",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/zkl2333/start-pages/issues"
+	},
+	"homepage": "https://github.com/zkl2333/start-pages#readme"
+}
