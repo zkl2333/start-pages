@@ -24,7 +24,6 @@ export default {
 	position: fixed;
 	top: 5rem;
 	right: 1rem;
-	width: 20%;
 	z-index: 10;
 }
 </style>
