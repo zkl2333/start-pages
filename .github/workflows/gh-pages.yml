@@ -1,0 +1,16 @@
+name: gh-pages
+on: [push]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: npm install, build, and test
+              run: |
+                  npm ci
+                  npm run build
+            - name: Use Node.js 10.x
+              uses: peaceiris/actions-gh-pages@v3.5.9
+              env:
+                  ACTIONS_DEPLOY_KEY: ${{ secrets.deploy_key }}
+                  PUBLISH_BRANCH: gh-pages
+                  PUBLISH_DIR: dist
