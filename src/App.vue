@@ -1,3 +1,108 @@
+<template>
+	<div id="app">
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+			<nav class="navbar" role="navigation" aria-label="main navigation">
+				<div class="navbar-brand " :class="{ 'is-active': true }">
+					<a class="navbar-item" href="https://bulma.io">
+						<img
+							src="https://bulma.io/images/bulma-logo.png"
+							alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+							width="112"
+							height="28"
+						/>
+					</a>
+					<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</a>
+				</div>
+			</nav>
+			<div id="navbarBasicExample" class="navbar-menu">
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<a @click="reset" class="button is-primary">
+								<strong>恢复</strong>
+							</a>
+							<a class="button is-light">
+								登录
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<section class="section">
+			<!-- <button  style="position: fixed;top:3em;right:7em"></button> -->
+			<div class="container">
+				<h1 class="title">Hello {{ user.name }}!</h1>
+				<br />
+				<p class="subtitle">
+					资源导航
+				</p>
+				<div class="columns">
+					<div v-for="lists in nav" :key="lists.name" class="column">
+						<div
+							class="menu"
+							@drop.stop="drop($event, lists)"
+							@dragover="allowDrop"
+							:style="dropStyle"
+						>
+							<h3 class="heading">{{ lists.name }}</h3>
+							<ul class="menu-list">
+								<!-- 如果是列表 -->
+								<template v-if="lists.list">
+									<li
+										v-for="(list, index) in lists.list"
+										@dragstart="dragStart($event, lists.list, index)"
+										@dragEnd="dragEnd"
+										:key="list.title"
+									>
+										<a
+											:href="list.src"
+											v-text="list.title"
+											@blur="list.title = $event.target.innerText || list.src"
+											@contextmenu.prevent=""
+											@click.right="clickRight"
+										></a>
+									</li>
+								</template>
+								<!-- 如果有子节点 -->
+								<template v-if="lists.child">
+									<li
+										class="child drop"
+										v-for="(child, key) in lists.child"
+										@drop.stop="drop($event, child)"
+										:style="dropStyle"
+										:key="key"
+									>
+										<p>{{ child.title }}</p>
+										<ul class="menu-list">
+											<li
+												draggable="true"
+												v-for="(item, index) in child.list"
+												@dragstart="dragStart($event, child.list, index)"
+												@dragEnd="dragEnd"
+												:key="index"
+											>
+												<a draggable="false" :href="item.src">{{
+													item.title
+												}}</a>
+											</li>
+										</ul>
+									</li>
+								</template>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</template>
+
+<script>
 let nav = {
 	frontEnd: {
 		name: "前端资源",
@@ -96,7 +201,7 @@ async function initDB() {
 				objectStore.createIndex("value", "value", { unique: true });
 			}
 			// 使用事务的 oncomplete 事件确保在插入数据前对象仓库已经创建完毕
-			objectStore.transaction.oncomplete = function(event) {
+			objectStore.transaction.oncomplete = function() {
 				// 将数据保存到新创建的对象仓库
 				addUser(db, { name: "Guest", nav });
 				putOptions(db, { name: "activeUser", value: 1 });
@@ -130,6 +235,7 @@ async function getOptions(DB, OptionsName) {
 		};
 		request.onerror = function(event) {
 			console.log("读取options失败");
+			reject(event);
 		};
 	});
 }
@@ -160,7 +266,7 @@ async function putUser(DB, userData, uid) {
 			};
 		});
 	} else {
-		reject("空对象");
+		throw new Error("空对象");
 	}
 }
 async function getUserByKey(DB, key) {
@@ -174,6 +280,7 @@ async function getUserByKey(DB, key) {
 		};
 		request.onerror = function(event) {
 			console.log("读取用户失败");
+			reject(event);
 		};
 	});
 }
@@ -207,15 +314,17 @@ async function getActiveUser(DB, name) {
 		};
 	});
 }
-const app = new Vue({
-	el: "#app",
-	data: {
-		nav: {},
-		user: {},
-		dropStyle: {
-			"background-color": "inherit",
-			"background-origin": "padding-box"
-		}
+export default {
+	name: "App",
+	data: function() {
+		return {
+			nav: {},
+			user: {},
+			dropStyle: {
+				"background-color": "inherit",
+				"background-origin": "padding-box"
+			}
+		};
 	},
 	created: async function() {
 		this.db = await initDB();
@@ -306,4 +415,19 @@ const app = new Vue({
 			deep: true
 		}
 	}
-});
+};
+</script>
+
+<style lang="scss">
+#app {
+	.heading {
+		font-size: 16px;
+	}
+	.subtitle {
+		font-size: 25px;
+	}
+	.child {
+		margin: 0.5em 0.75em;
+	}
+}
+</style>
