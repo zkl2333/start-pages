@@ -1,38 +1,35 @@
 <template>
 	<div id="app">
-		<nav class="navbar" role="navigation" aria-label="main navigation">
-			<nav class="navbar" role="navigation" aria-label="main navigation">
-				<div class="navbar-brand " :class="{ 'is-active': true }">
-					<a class="navbar-item" href="https://bulma.io">
-						<img
-							src="https://bulma.io/images/bulma-logo.png"
-							alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
-							width="112"
-							height="28"
-						/>
-					</a>
-					<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-					</a>
-				</div>
-			</nav>
-			<div id="navbarBasicExample" class="navbar-menu">
-				<div class="navbar-end">
-					<div class="navbar-item">
-						<div class="buttons">
-							<a @click="reset" class="button is-primary">
-								<strong>恢复</strong>
-							</a>
-							<a class="button is-light">
-								登录
-							</a>
+		<notification :notifications="notifications" @closeNotifications="closeNotifications" />
+		<div class="modal" :class="{ 'is-active': activeModal }">
+			<div class="modal-background"></div>
+			<div class="modal-card">
+				<div class="modal-content">
+					<div class="card">
+						<div class="card-content">
+							<div class="content">
+								<h1 class="title has-text-danger">危险操作</h1>
+								<p class="is-size-4">你确定要重置当前用户所有数据吗？</p>
+							</div>
 						</div>
+						<footer class="card-footer">
+							<a href="#" class="card-footer-item has-text-danger" @click="reset"
+								>重置</a
+							>
+							<a href="#" class="card-footer-item has-text-grey" @click="closeModal"
+								>取消</a
+							>
+						</footer>
 					</div>
 				</div>
+				<button
+					@click="closeModal"
+					class="modal-close is-large"
+					aria-label="close"
+				></button>
 			</div>
-		</nav>
+		</div>
+		<navbar @reset="activeModal = true" />
 		<section class="section">
 			<!-- <button  style="position: fixed;top:3em;right:7em"></button> -->
 			<div class="container">
@@ -42,54 +39,45 @@
 					资源导航
 				</p>
 				<div class="columns">
-					<div v-for="lists in nav" :key="lists.name" class="column">
+					<div v-for="group in nav" :key="group.name" class="column">
 						<div
 							class="menu"
-							@drop.stop="drop($event, lists)"
+							@drop.stop="drop($event, group)"
 							@dragover="allowDrop"
 							:style="dropStyle"
 						>
-							<h3 class="heading">{{ lists.name }}</h3>
+							<h3 class="heading">{{ group.name }}</h3>
 							<ul class="menu-list">
 								<!-- 如果是列表 -->
-								<template v-if="lists.list">
-									<li
-										v-for="(list, index) in lists.list"
-										@dragstart="dragStart($event, lists.list, index)"
+								<template v-if="group.list">
+									<links
+										v-for="(link, index) in group.list"
+										@dragstart="dragStart($event, group.list, index)"
 										@dragEnd="dragEnd"
-										:key="list.title"
-									>
-										<a
-											:href="list.src"
-											v-text="list.title"
-											@blur="list.title = $event.target.innerText || list.src"
-											@contextmenu.prevent=""
-											@click.right="clickRight"
-										></a>
-									</li>
+										@saveTitle="link.title = $event"
+										:key="link.title"
+										:link="link"
+									/>
 								</template>
 								<!-- 如果有子节点 -->
-								<template v-if="lists.child">
+								<template v-if="group.child">
 									<li
 										class="child drop"
-										v-for="(child, key) in lists.child"
+										v-for="(child, key) in group.child"
 										@drop.stop="drop($event, child)"
 										:style="dropStyle"
 										:key="key"
 									>
 										<p>{{ child.title }}</p>
 										<ul class="menu-list">
-											<li
-												draggable="true"
-												v-for="(item, index) in child.list"
+											<links
+												v-for="(link, index) in child.list"
 												@dragstart="dragStart($event, child.list, index)"
 												@dragEnd="dragEnd"
+												@saveTitle="link.title = $event"
+												:link="link"
 												:key="index"
-											>
-												<a draggable="false" :href="item.src">{{
-													item.title
-												}}</a>
-											</li>
+											/>
 										</ul>
 									</li>
 								</template>
@@ -109,15 +97,15 @@ let nav = {
 		list: [
 			{
 				title: "CodePen",
-				src: "https://codepen.io/"
+				url: "https://codepen.io/"
 			}
 		],
 		child: {
 			vue: {
 				title: "Vue",
 				list: [
-					{ title: "Vue官网", src: "https://cn.vuejs.org/" },
-					{ title: "Vue论坛", src: "https://forum.vuejs.org/" }
+					{ title: "Vue官网", url: "https://cn.vuejs.org/" },
+					{ title: "Vue论坛", url: "https://forum.vuejs.org/" }
 				]
 			}
 		}
@@ -127,11 +115,11 @@ let nav = {
 		list: [
 			{
 				title: "dribbble",
-				src: "https://dribbble.com/"
+				url: "https://dribbble.com/"
 			},
 			{
 				title: "站酷",
-				src: "https://www.zcool.com.cn/"
+				url: "https://www.zcool.com.cn/"
 			}
 		]
 	},
@@ -140,11 +128,11 @@ let nav = {
 		list: [
 			{
 				title: "MDN",
-				src: "https://developer.mozilla.org/zh-CN/"
+				url: "https://developer.mozilla.org/zh-CN/"
 			},
 			{
 				title: "w3school",
-				src: "https://www.w3school.com.cn/"
+				url: "https://www.w3school.com.cn/"
 			}
 		],
 		child: {
@@ -153,17 +141,17 @@ let nav = {
 				list: [
 					{
 						title: "小程序Api文档",
-						src: "https://developers.weixin.qq.com/miniprogram/dev/api/"
+						url: "https://developers.weixin.qq.com/miniprogram/dev/api/"
 					},
 					{
 						title: "vant-weapp组件库",
-						src: "https://youzan.github.io/vant-weapp/"
+						url: "https://youzan.github.io/vant-weapp/"
 					}
 				]
 			},
 			vue: {
 				title: "Vue",
-				list: [{ title: "Vue Api 文档", src: "https://cn.vuejs.org/v2/api/" }]
+				list: [{ title: "Vue Api 文档", url: "https://cn.vuejs.org/v2/api/" }]
 			}
 		}
 	}
@@ -314,17 +302,29 @@ async function getActiveUser(DB, name) {
 		};
 	});
 }
+
+import navbar from "./components/NavBar";
+import links from "./components/Links";
+import notification from "./components/Notification";
+
 export default {
 	name: "App",
 	data: function() {
 		return {
 			nav: {},
 			user: {},
+			activeModal: false,
+			notifications: [],
 			dropStyle: {
 				"background-color": "inherit",
 				"background-origin": "padding-box"
 			}
 		};
+	},
+	components: {
+		navbar,
+		links,
+		notification
 	},
 	created: async function() {
 		this.db = await initDB();
@@ -344,9 +344,9 @@ export default {
 		//开始拖动
 		dragStart(e, list, index) {
 			let target = list[index];
-			e.dataTransfer.setData("text/html", `<a href="${target.src}">${target.title}</a>`);
-			e.dataTransfer.setData("text/uri-list", `#${target.title}\n${target.src}`);
-			e.dataTransfer.setData("text/plain", target.src);
+			e.dataTransfer.setData("text/html", `<a href="${target.url}">${target.title}</a>`);
+			e.dataTransfer.setData("text/uri-list", `#${target.title}\n${target.url}`);
+			e.dataTransfer.setData("text/plain", target.url);
 			this.dragingCallBack = () => {
 				list.splice(index, 1);
 			};
@@ -375,14 +375,14 @@ export default {
 				if (a) {
 					obj.list.push({
 						title: a.innerText,
-						src: a.href
+						url: a.href
 					});
 				}
 			} else if (uriList || plain) {
 				let url = e.dataTransfer.getData("URL");
 				obj.list.push({
 					title: url,
-					src: url
+					url: url
 				});
 			}
 		},
@@ -393,23 +393,28 @@ export default {
 			let content = e.target.innerText;
 			list[index].title = content;
 		},
-		clickRight(e) {
-			e.currentTarget.contentEditable = "true";
-			var range = window.getSelection(); //创建range
-			range.selectAllChildren(e.currentTarget); //range 选择obj下所有子内容
-			range.collapseToEnd(); //光标移至最后
-			e.currentTarget.onblur = function(e) {
-				e.currentTarget.contentEditable = "false";
-			};
+		closeModal() {
+			this.activeModal = false;
 		},
 		reset() {
 			this.nav = nav;
+		},
+		notify(msg) {
+			let length = this.notifications.push(msg);
+			setTimeout(() => {
+				this.closeNotifications(length - 1);
+			}, 1000);
+		},
+		closeNotifications(index) {
+			this.notifications.splice(index, 1);
 		}
 	},
 	watch: {
 		nav: {
 			handler(nav) {
-				putUser(this.db, { name: this.user.name, nav }, this.user.uid);
+				putUser(this.db, { name: this.user.name, nav }, this.user.uid).then(() => {
+					this.notify("已保存");
+				});
 				return nav;
 			},
 			deep: true
@@ -428,6 +433,9 @@ export default {
 	}
 	.child {
 		margin: 0.5em 0.75em;
+	}
+	.modal-content {
+		max-width: 500px;
 	}
 }
 </style>
