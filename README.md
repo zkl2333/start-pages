@@ -1,6 +1,8 @@
 # start-pages
 我的个人网址导航
 
+![gh-pages](https://github.com/zkl2333/start-pages/workflows/gh-pages/badge.svg)
+
 ## Project setup
 ```
 yarn install

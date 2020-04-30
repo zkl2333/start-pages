@@ -1,19 +1,16 @@
 name: gh-pages
-on: - push
-    - watch:
-        types: started
+on: [push]
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
+    deploy:
+        runs-on: ubuntu-18.04
         steps:
-            - name: npm install, build, and test
-              run: |
-                  npm ci
-                  npm run build
-            - name: Use Node.js 10.x
-              uses: peaceiris/actions-gh-pages@v3.5.9
-              env:
-                  ACTIONS_DEPLOY_KEY: ${{ secrets.deploy_key }}
-                  PUBLISH_BRANCH: gh-pages
-                  PUBLISH_DIR: dist
+          - uses: actions/checkout@v2
+          - run: |
+                  yarn
+                  yarn build
+          - name: Deploy
+            uses: peaceiris/actions-gh-pages@v3
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_dir: ./dist
+              publish_branch: gh-pages  # deploying branch
