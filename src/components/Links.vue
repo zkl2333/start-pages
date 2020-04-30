@@ -6,12 +6,15 @@
 	>
 		<a
 			draggable="false"
-			:href="link.url"
-			v-text="link.title"
+			@click="openLink(link.url)"
 			@blur="changeTitle"
-			@contextmenu.prevent="false"
+			@contextmenu.prevent=""
 			@click.right="clickRight"
-		></a>
+		>
+			<img :src="'https://api.byi.pw/favicon/?url=' + link.url" alt="link.title" />
+			<span> {{ link.title }}</span>
+			<button class="delete" @click.stop="removrLink"></button>
+		</a>
 	</li>
 </template>
 
@@ -34,7 +37,40 @@ export default {
 			event.currentTarget.onblur = function(event) {
 				event.currentTarget.contentEditable = "false";
 			};
+		},
+		openLink(uel) {
+			window.open(uel);
+		},
+		removrLink(event) {
+			this.$emit("removrLink");
 		}
 	}
 };
 </script>
+<style lang="scss">
+li {
+	> a {
+		display: flex !important;
+		align-items: center;
+		position: relative;
+		img {
+			height: 1em;
+			width: 1em;
+			margin-right: 0.5em;
+			display: inline-block;
+		}
+		span {
+			display: inline-block;
+		}
+		.delete {
+			align-self: flex-end;
+			position: absolute;
+			right: 0.75rem;
+			display: none;
+		}
+		&:hover .delete {
+			display: inline-block;
+		}
+	}
+}
+</style>

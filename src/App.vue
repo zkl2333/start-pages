@@ -57,6 +57,7 @@
 										@saveTitle="link.title = $event"
 										:key="link.title"
 										:link="link"
+										@removrLink="group.list.splice(index, 1)"
 									/>
 								</template>
 								<!-- 如果有子节点 -->
@@ -77,6 +78,7 @@
 												@saveTitle="link.title = $event"
 												:link="link"
 												:key="index"
+												@removrLink="child.list.splice(index, 1)"
 											/>
 										</ul>
 									</li>
@@ -398,6 +400,7 @@ export default {
 		},
 		reset() {
 			this.nav = nav;
+			this.closeModal();
 		},
 		notify(msg) {
 			let length = this.notifications.push(msg);
@@ -411,10 +414,12 @@ export default {
 	},
 	watch: {
 		nav: {
-			handler(nav) {
-				putUser(this.db, { name: this.user.name, nav }, this.user.uid).then(() => {
-					this.notify("已保存");
-				});
+			handler(nav, oldNav) {
+				console.log(nav, oldNav);
+				if (JSON.stringify(oldNav) != "{}")
+					putUser(this.db, { name: this.user.name, nav }, this.user.uid).then(() => {
+						this.notify("已保存");
+					});
 				return nav;
 			},
 			deep: true
@@ -436,6 +441,11 @@ export default {
 	}
 	.modal-content {
 		max-width: 500px;
+		padding: 10px;
+	}
+	.modal-card,
+	.modal-content {
+		margin: 0 auto;
 	}
 }
 </style>
