@@ -1,8 +1,11 @@
 name: gh-pages
-on: [push]
+on: - push
+    - watch:
+        types: started
 jobs:
     build:
         runs-on: ubuntu-latest
+        if: github.event.repository.owner.id == github.event.sender.id
         steps:
             - name: npm install, build, and test
               run: |
