@@ -23,7 +23,6 @@
 		</div>
 		<navbar @reset="activeModal = true" />
 		<section class="section">
-			<!-- <button  style="position: fixed;top:3em;right:7em"></button> -->
 			<div class="container">
 				<h1 class="title">Hello {{ user.name }}!</h1>
 				<br />

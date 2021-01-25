@@ -11,7 +11,7 @@
 			@contextmenu.prevent=""
 			@click.right="clickRight"
 		>
-			<img :src="'https://api.byi.pw/favicon/?url=' + link.url" :alt="link.title" />
+			<!-- <img :src="'https://api.byi.pw/favicon/?url=' + link.url" :alt="link.title" /> -->
 			<span> {{ link.title }}</span>
 			<button class="delete" @click.stop="removLink"></button>
 		</a>
