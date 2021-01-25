@@ -16,6 +16,7 @@
 		"eslint": "^6.7.2",
 		"eslint-plugin-vue": "^6.2.2",
 		"node-sass": "^4.14.0",
+		"regenerator-runtime": "^0.13.7",
 		"vue-template-compiler": "^2.6.11"
 	},
 	"scripts": {
