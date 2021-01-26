@@ -17,4 +17,4 @@ jobs:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./dist
                   publish_branch: gh-pages # deploying branch
-                  CNAME: start-pages.zkl2333.com
+                  CNAME: start.zkl2333.com
