@@ -1,11 +1,16 @@
 import Vue from 'vue';
 import App from './App.vue';
+import 'bulma/css/bulma.css';
 
-// const AV = require('leancloud-storage');
+const AV = require('leancloud-storage');
 
-// const { Query, User } = AV;
+AV.init({
+	appId: 'j7GN2dwJQsvonfSW0LkUbLzg-gzGzoHsz',
+	appKey: 'iTS2PTykmS6IuBWeS9p32W6Y',
+	serverURL: 'https://api.zkl2333.com'
+});
 
-// Vue.config.productionTip = false
+Vue.prototype.$cloud = AV;
 
 new Vue({
 	render: h => h(App)

@@ -1806,7 +1806,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/cli-plugin-router@npm:^4.5.11":
+"@vue/cli-plugin-router@npm:^4.5.11, @vue/cli-plugin-router@npm:~4.5.0":
   version: 4.5.11
   resolution: "@vue/cli-plugin-router@npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz"
   dependencies:
@@ -3061,6 +3061,13 @@ __metadata:
   version: 3.0.0
   resolution: "builtin-status-codes@npm:3.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbuiltin-status-codes%2Fdownload%2Fbuiltin-status-codes-3.0.0.tgz"
   checksum: 8e2872a69ae05c6a24adc3b6dd4c340f077ea842fc8115ab5b4896f3ab68cf38f56438d430273efd152def59313fd8ca3a35bdad4c3e88b8bb88ba4a371b3866
+  languageName: node
+  linkType: hard
+
+"bulma@npm:^0.9.1":
+  version: 0.9.1
+  resolution: "bulma@npm:0.9.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbulma%2Fdownload%2Fbulma-0.9.1.tgz"
+  checksum: b4bfe969cb711537383aabab724019ab3e5028891382a20dedde85fa8247a0af9ec0f8cdd26e7276528311cda97e77cdf382b2b0f86f1034963273e1fadb9433
   languageName: node
   linkType: hard
 
@@ -11000,9 +11007,11 @@ fsevents@~2.3.1:
   dependencies:
     "@vue/cli-plugin-babel": ~4.5.0
     "@vue/cli-plugin-eslint": ~4.5.0
+    "@vue/cli-plugin-router": ~4.5.0
     "@vue/cli-service": ~4.5.0
     "@vue/eslint-config-airbnb": ^5.0.2
     babel-eslint: ^10.1.0
+    bulma: ^0.9.1
     core-js: ^3.6.4
     eslint: ^6.7.2
     eslint-plugin-import: ^2.20.2

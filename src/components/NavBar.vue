@@ -10,9 +10,14 @@
 		<div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': active }">
 			<div class="navbar-end" @click="active = false">
 				<a class="navbar-item" @click="reset">重置</a>
-				<a class="navbar-item" href="https://github.com/zkl2333/start">github</a>
+				<a class="navbar-item" target="_blank" href="https://github.com/zkl2333/start"
+					>GitHub</a
+				>
 				<div class="navbar-item">
-					<div class="buttons">
+					<div class="buttons" v-if="isLogin">
+						<a class="button is-light">{{ user.username }}</a>
+					</div>
+					<div class="buttons" v-else>
 						<a class="button is-light">登录</a>
 					</div>
 				</div>
@@ -23,6 +28,16 @@
 
 <script>
 export default {
+	props: {
+		user: {
+			type: Object,
+			required: true
+		},
+		isLogin: {
+			type: Boolean,
+			required: false
+		}
+	},
 	data() {
 		return {
 			active: false

@@ -39,9 +39,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@vue/cli-plugin-babel", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-babel%2Fdownload%2F%40vue%2Fcli-plugin-babel-4.5.11.tgz"],
             ["@vue/cli-plugin-eslint", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-eslint%2Fdownload%2F%40vue%2Fcli-plugin-eslint-4.5.11.tgz"],
+            ["@vue/cli-plugin-router", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz"],
             ["@vue/cli-service", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-service%2Fdownload%2F%40vue%2Fcli-service-4.5.11.tgz"],
             ["@vue/eslint-config-airbnb", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:5.3.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Feslint-config-airbnb%2Fdownload%2F%40vue%2Feslint-config-airbnb-5.3.0.tgz"],
             ["babel-eslint", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:10.1.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbabel-eslint%2Fdownload%2Fbabel-eslint-10.1.0.tgz"],
+            ["bulma", "npm:0.9.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbulma%2Fdownload%2Fbulma-0.9.1.tgz"],
             ["core-js", "npm:3.8.3::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-3.8.3.tgz"],
             ["eslint", "npm:6.8.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint%2Fdownload%2Feslint-6.8.0.tgz"],
             ["eslint-plugin-import", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:2.22.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-import%2Fdownload%2Feslint-plugin-import-2.22.1.tgz"],
@@ -2934,10 +2936,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:a3302a36ae3983e76eea55ff4c4851e8080657a2d2c974d5bb0dd7360a37afef5b3697b414e5d9cb7f79d1c82f9c71b56cd981271098059c42021a54a38b5e6e#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz", {
-          "packageLocation": "./.yarn/$$virtual/@vue-cli-plugin-router-virtual-1589598439/0/cache/@vue-cli-plugin-router-npm-4.5.11-1e3e5d8ffb-792fd539ff.zip/node_modules/@vue/cli-plugin-router/",
+        ["virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz", {
+          "packageLocation": "./.yarn/$$virtual/@vue-cli-plugin-router-virtual-a59dc393dd/0/cache/@vue-cli-plugin-router-npm-4.5.11-1e3e5d8ffb-792fd539ff.zip/node_modules/@vue/cli-plugin-router/",
           "packageDependencies": [
-            ["@vue/cli-plugin-router", "virtual:a3302a36ae3983e76eea55ff4c4851e8080657a2d2c974d5bb0dd7360a37afef5b3697b414e5d9cb7f79d1c82f9c71b56cd981271098059c42021a54a38b5e6e#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz"],
+            ["@vue/cli-plugin-router", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz"],
             ["@types/vue__cli-service", null],
             ["@vue/cli-service", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-service%2Fdownload%2F%40vue%2Fcli-service-4.5.11.tgz"],
             ["@vue/cli-shared-utils", "npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-shared-utils%2Fdownload%2F%40vue%2Fcli-shared-utils-4.5.11.tgz"]
@@ -2992,7 +2994,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack", "npm:4.41.26::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack%2Fdownload%2F%40types%2Fwebpack-4.41.26.tgz"],
             ["@types/webpack-dev-server", "npm:3.11.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack-dev-server%2Fdownload%2F%40types%2Fwebpack-dev-server-3.11.1.tgz"],
             ["@vue/cli-overlay", "npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-overlay%2Fdownload%2F%40vue%2Fcli-overlay-4.5.11.tgz"],
-            ["@vue/cli-plugin-router", "virtual:a3302a36ae3983e76eea55ff4c4851e8080657a2d2c974d5bb0dd7360a37afef5b3697b414e5d9cb7f79d1c82f9c71b56cd981271098059c42021a54a38b5e6e#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz"],
+            ["@vue/cli-plugin-router", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz"],
             ["@vue/cli-plugin-vuex", "virtual:a3302a36ae3983e76eea55ff4c4851e8080657a2d2c974d5bb0dd7360a37afef5b3697b414e5d9cb7f79d1c82f9c71b56cd981271098059c42021a54a38b5e6e#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-vuex%2Fdownload%2F%40vue%2Fcli-plugin-vuex-4.5.11.tgz"],
             ["@vue/cli-shared-utils", "npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-shared-utils%2Fdownload%2F%40vue%2Fcli-shared-utils-4.5.11.tgz"],
             ["@vue/compiler-sfc", null],
@@ -4452,6 +4454,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/builtin-status-codes-npm-3.0.0-e860b38400-8e2872a69a.zip/node_modules/builtin-status-codes/",
           "packageDependencies": [
             ["builtin-status-codes", "npm:3.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbuiltin-status-codes%2Fdownload%2Fbuiltin-status-codes-3.0.0.tgz"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["bulma", [
+        ["npm:0.9.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbulma%2Fdownload%2Fbulma-0.9.1.tgz", {
+          "packageLocation": "./.yarn/cache/bulma-npm-0.9.1-3898d9d865-b4bfe969cb.zip/node_modules/bulma/",
+          "packageDependencies": [
+            ["bulma", "npm:0.9.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbulma%2Fdownload%2Fbulma-0.9.1.tgz"]
           ],
           "linkType": "HARD",
         }]
@@ -13402,9 +13413,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["start", "workspace:."],
             ["@vue/cli-plugin-babel", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-babel%2Fdownload%2F%40vue%2Fcli-plugin-babel-4.5.11.tgz"],
             ["@vue/cli-plugin-eslint", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-eslint%2Fdownload%2F%40vue%2Fcli-plugin-eslint-4.5.11.tgz"],
+            ["@vue/cli-plugin-router", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-router%2Fdownload%2F%40vue%2Fcli-plugin-router-4.5.11.tgz"],
             ["@vue/cli-service", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.5.11::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-service%2Fdownload%2F%40vue%2Fcli-service-4.5.11.tgz"],
             ["@vue/eslint-config-airbnb", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:5.3.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Feslint-config-airbnb%2Fdownload%2F%40vue%2Feslint-config-airbnb-5.3.0.tgz"],
             ["babel-eslint", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:10.1.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbabel-eslint%2Fdownload%2Fbabel-eslint-10.1.0.tgz"],
+            ["bulma", "npm:0.9.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fbulma%2Fdownload%2Fbulma-0.9.1.tgz"],
             ["core-js", "npm:3.8.3::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-3.8.3.tgz"],
             ["eslint", "npm:6.8.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint%2Fdownload%2Feslint-6.8.0.tgz"],
             ["eslint-plugin-import", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:2.22.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-import%2Fdownload%2Feslint-plugin-import-2.22.1.tgz"],

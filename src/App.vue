@@ -29,7 +29,7 @@
 				></button>
 			</div>
 		</div>
-		<navbar @reset="activeModal = true" />
+		<navbar @reset="activeModal = true" :user="user" :isLogin="isLogin" />
 		<section class="section">
 			<div class="container">
 				<h1 class="title">Hello {{ user.name }}!</h1>
@@ -160,157 +160,14 @@ const nav = {
 	}
 };
 
-async function initDB() {
-	return await new Promise((resolve, reject) => {
-		let request = window.indexedDB.open('StartPages', 1);
-		let db;
-		request.onerror = function (event) {
-			console.log(`Database error: ${event.target.errorCode}`);
-			reject(new Error('数据库打开报错'));
-		};
-		request.onsuccess = function (event) {
-			db = event.target.result;
-			request = request.result;
-			console.log('数据库打开成功');
-			resolve(db);
-		};
-		request.onupgradeneeded = function (event) {
-			console.log('数据库需要升级');
-			db = event.target.result;
-			let objectStore;
-			// 创建仓库
-			if (!db.objectStoreNames.contains('user')) {
-				console.log('创建user仓库');
-				objectStore = db.createObjectStore('user', { autoIncrement: true });
-				objectStore.createIndex('name', 'name', { unique: false });
-				objectStore.createIndex('email', 'email', { unique: true });
-			}
-			if (!db.objectStoreNames.contains('options')) {
-				console.log('创建options仓库');
-				objectStore = db.createObjectStore('options', { autoIncrement: true });
-				objectStore.createIndex('name', 'name', { unique: true });
-				objectStore.createIndex('value', 'value', { unique: true });
-			}
-			// 使用事务的 oncomplete 事件确保在插入数据前对象仓库已经创建完毕
-			objectStore.transaction.oncomplete = function () {
-				// 将数据保存到新创建的对象仓库
-				addUser(db, { name: 'Guest', nav });
-				putOptions(db, { name: 'activeUser', value: 1 });
-				resolve(db);
-			};
-		};
-	});
-}
-async function putOptions(DB, Options) {
-	return await new Promise((resolve, reject) => {
-		const transaction = DB.transaction(['options'], 'readwrite');
-		const optionsObjectStore = transaction.objectStore('options');
-		const request = optionsObjectStore.put(Options);
-		request.onsuccess = function (event) {
-			resolve(event);
-		};
-		request.onerror = function (event) {
-			reject(event);
-		};
-	});
-}
-async function getOptions(DB, OptionsName) {
-	return await new Promise((resolve, reject) => {
-		const transaction = DB.transaction(['options', 'user'], 'readonly');
-		const optionsObjectStore = transaction.objectStore('options');
-		const index = optionsObjectStore.index('name');
-		const request = index.get(OptionsName);
-		request.onsuccess = function (event) {
-			console.log('读取options成功', event.target.result);
-			resolve(event.target.result.value);
-		};
-		request.onerror = function (event) {
-			console.log('读取options失败');
-			reject(event);
-		};
-	});
-}
-async function addUser(DB, userData) {
-	return await new Promise((resolve, reject) => {
-		const transaction = DB.transaction(['user'], 'readwrite');
-		const userObjectStore = transaction.objectStore('user');
-		const request = userObjectStore.add(userData);
-		request.onsuccess = function (event) {
-			resolve(event);
-		};
-		request.onerror = function (event) {
-			reject(event);
-		};
-	});
-}
-async function putUser(DB, userData, uid) {
-	if (userData) {
-		return await new Promise((resolve, reject) => {
-			const transaction = DB.transaction(['user'], 'readwrite');
-			const userObjectStore = transaction.objectStore('user');
-			const request = userObjectStore.put(userData, uid);
-			request.onsuccess = function (event) {
-				resolve(event);
-			};
-			request.onerror = function (event) {
-				reject(event);
-			};
-		});
-	}
-	throw new Error('空对象');
-}
-async function getUserByKey(DB, key) {
-	return await new Promise((resolve, reject) => {
-		const transaction = DB.transaction(['user'], 'readonly');
-		const userObjectStore = transaction.objectStore('user');
-		const request = userObjectStore.get(key);
-		request.onsuccess = function (event) {
-			console.log('读取用户成功', event.target.result);
-			resolve(event.target.result);
-		};
-		request.onerror = function (event) {
-			console.log('读取用户失败');
-			reject(event);
-		};
-	});
-}
-async function getUserByName(DB, name) {
-	return await new Promise((resolve, reject) => {
-		const transaction = DB.transaction(['user'], 'readonly');
-		const userObjectStore = transaction.objectStore('user');
-		const index = userObjectStore.index('name');
-		const request = index.get(name);
-		request.onsuccess = function (event) {
-			console.log('读取用户成功', event.target.result);
-			resolve(event.target.result);
-		};
-		request.onerror = function (event) {
-			console.log('读取用户失败');
-		};
-	});
-}
-async function getActiveUser(DB, name) {
-	return await new Promise((resolve /* , reject */) => {
-		const transaction = DB.transaction(['user'], 'readonly');
-		const userObjectStore = transaction.objectStore('user');
-		const index = userObjectStore.index('name');
-		const request = index.get(name);
-		request.onsuccess = function (event) {
-			console.log('读取用户成功', event.target.result);
-			resolve(event.target.result);
-		};
-		request.onerror = function (event) {
-			console.log('读取用户失败');
-		};
-	});
-}
-
 export default {
 	name: 'App',
 	data() {
 		return {
 			nav: {},
-			user: {},
+			user: {
+				lsLogin: false
+			},
 			activeModal: false,
 			notifications: [],
 			dropStyle: {
@@ -324,12 +181,27 @@ export default {
 		links,
 		notification
 	},
-	async created() {
-		this.db = await initDB();
-		const uid = await getOptions(this.db, 'activeUser');
-		const user = await getUserByKey(this.db, uid);
-		this.nav = user.nav || nav;
-		this.user = { name: user.name, uid };
+	computed: {
+		isLogin() {
+			return !this.user.isAnonymous();
+		}
+	},
+	created() {
+		const currentUser = this.$cloud.User.current();
+		if (currentUser) {
+			// 跳到首页
+			this.user = currentUser;
+			console.log('已获取用户');
+		} else {
+			this.user.lsLogin = false;
+			// 显示注册或登录页面
+			this.$cloud.User.loginAnonymously().then(user => {
+				// user 是新的匿名用户
+				console.log('新建匿名用户');
+				this.user = user;
+			});
+		}
+		this.nav = /* user.nav || */ nav;
 	},
 	methods: {
 		// 可以放置
@@ -399,6 +271,9 @@ export default {
 		closeModal() {
 			this.activeModal = false;
 		},
+		login() {
+			this.closeModal();
+		},
 		reset() {
 			this.nav = nav;
 			this.closeModal();
@@ -416,11 +291,11 @@ export default {
 	watch: {
 		nav: {
 			handler(nav, oldNav) {
-				if (JSON.stringify(oldNav) !== '{}') {
-					putUser(this.db, { name: this.user.name, nav }, this.user.uid).then(() => {
-						this.notify('已保存');
-					});
-				}
+				// if (JSON.stringify(oldNav) !== '{}') {
+				// 	putUser(this.db, { name: this.user.name, nav }, this.user.uid).then(() => {
+				// 		this.notify('已保存');
+				// 	});
+				// }
 				return nav;
 			},
 			deep: true
@@ -429,7 +304,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
 	.heading {
 		font-size: 16px;
