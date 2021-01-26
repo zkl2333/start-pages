@@ -10,7 +10,7 @@
 		<div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': active }">
 			<div class="navbar-end" @click="active = false">
 				<a class="navbar-item" @click="reset">重置</a>
-				<a class="navbar-item" href="https://github.com/zkl2333/start-pages">github</a>
+				<a class="navbar-item" href="https://github.com/zkl2333/start">github</a>
 				<div class="navbar-item">
 					<div class="buttons">
 						<a class="button is-light">登录</a>

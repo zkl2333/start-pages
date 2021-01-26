@@ -1,5 +1,5 @@
 {
-	"name": "start-pages",
+	"name": "start",
 	"version": "1.0.0",
 	"description": "一个简单的导航页",
 	"main": "main.js",
@@ -47,11 +47,11 @@
 		"last 2 versions",
 		"not dead"
 	],
-	"repository": "git+https://github.com/zkl2333/start-pages.git",
+	"repository": "git+https://github.com/zkl2333/start.git",
 	"author": "zkl2333",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/zkl2333/start-pages/issues"
+		"url": "https://github.com/zkl2333/start/issues"
 	},
-	"homepage": "https://github.com/zkl2333/start-pages#readme"
+	"homepage": "https://github.com/zkl2333/start#readme"
 }

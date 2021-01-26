@@ -1,9 +1,9 @@
-# start-pages
+# start
 
 我的个人网址导航
 
-![gh-pages](https://github.com/zkl2333/start-pages/workflows/gh-pages/badge.svg)
-[![GitHub license](https://img.shields.io/github/license/zkl2333/start-pages)](https://github.com/zkl2333/start-pages/blob/master/LICENSE)
+![gh-pages](https://github.com/zkl2333/start/workflows/gh-pages/badge.svg)
+[![GitHub license](https://img.shields.io/github/license/zkl2333/start)](https://github.com/zkl2333/start/blob/master/LICENSE)
 
 ## 安装依赖
 

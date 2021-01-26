@@ -10531,9 +10531,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"start-pages@workspace:.":
+"start@workspace:.":
   version: 0.0.0-use.local
-  resolution: "start-pages@workspace:."
+  resolution: "start@workspace:."
   dependencies:
     "@vue/cli-plugin-babel": ^4.3.0
     "@vue/cli-plugin-eslint": ^4.3.0
