@@ -57,7 +57,9 @@ export default {
 <style lang="scss" scoped>
 .header {
 	height: 52px;
-	box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+	.navbar {
+		box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+	}
 	.title {
 		margin: 0;
 		line-height: 52px;
