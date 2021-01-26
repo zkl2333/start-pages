@@ -1,6 +1,10 @@
 <template>
 	<div class="notifications">
-		<div v-for="(notification, index) in notifications" :key="index" class="notification is-primary">
+		<div
+			v-for="(notification, index) in notifications"
+			:key="index"
+			class="notification is-primary"
+		>
 			<button class="delete" @click="close(index)"></button>
 			{{ notification }}
 		</div>
@@ -9,11 +13,11 @@
 
 <script>
 export default {
-	props: ["notifications"],
+	props: ['notifications'],
 	created() {},
 	methods: {
 		close(index) {
-			this.$emit("closeNotifications", index);
+			this.$emit('closeNotifications', index);
 		}
 	}
 };

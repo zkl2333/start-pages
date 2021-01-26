@@ -23,14 +23,14 @@
 
 <script>
 export default {
-	data: function() {
+	data() {
 		return {
 			active: false
 		};
 	},
 	methods: {
-		reset: function() {
-			this.$emit("reset");
+		reset() {
+			this.$emit('reset');
 			this.active = false;
 		}
 	}
