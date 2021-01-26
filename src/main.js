@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import router from './router';
 import 'bulma/css/bulma.css';
 
 const AV = require('leancloud-storage');
@@ -13,5 +14,6 @@ AV.init({
 Vue.prototype.$cloud = AV;
 
 new Vue({
+	router,
 	render: h => h(App)
 }).$mount('#app');

@@ -53,7 +53,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regenerator-runtime", "npm:0.13.7::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.7.tgz"],
             ["sass-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:8.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-8.0.2.tgz"],
             ["vue", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz"],
-            ["vue-template-compiler", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-template-compiler%2Fdownload%2Fvue-template-compiler-2.6.12.tgz"]
+            ["vue-router", "npm:3.5.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-3.5.0.tgz"],
+            ["vue-template-compiler", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-template-compiler%2Fdownload%2Fvue-template-compiler-2.6.12.tgz"],
+            ["vuex", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:3.6.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuex%2Fdownload%2Fvuex-3.6.0.tgz"]
           ],
           "linkType": "SOFT",
         }]
@@ -13427,7 +13429,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regenerator-runtime", "npm:0.13.7::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.7.tgz"],
             ["sass-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:8.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-8.0.2.tgz"],
             ["vue", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz"],
-            ["vue-template-compiler", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-template-compiler%2Fdownload%2Fvue-template-compiler-2.6.12.tgz"]
+            ["vue-router", "npm:3.5.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-3.5.0.tgz"],
+            ["vue-template-compiler", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-template-compiler%2Fdownload%2Fvue-template-compiler-2.6.12.tgz"],
+            ["vuex", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:3.6.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuex%2Fdownload%2Fvuex-3.6.0.tgz"]
           ],
           "linkType": "SOFT",
         }]
@@ -14752,6 +14756,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["vue-router", [
+        ["npm:3.5.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-3.5.0.tgz", {
+          "packageLocation": "./.yarn/cache/vue-router-npm-3.5.0-f9fec020ce-a1dea7fce1.zip/node_modules/vue-router/",
+          "packageDependencies": [
+            ["vue-router", "npm:3.5.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-3.5.0.tgz"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["vue-style-loader", [
         ["npm:4.1.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-style-loader%2Fdownload%2Fvue-style-loader-4.1.2.tgz", {
           "packageLocation": "./.yarn/cache/vue-style-loader-npm-4.1.2-6948b0ca1e-5f6104300a.zip/node_modules/vue-style-loader/",
@@ -14779,6 +14792,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/vue-template-es2015-compiler-npm-1.9.1-88254d7bc5-e25c0d4603.zip/node_modules/vue-template-es2015-compiler/",
           "packageDependencies": [
             ["vue-template-es2015-compiler", "npm:1.9.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-template-es2015-compiler%2Fdownload%2Fvue-template-es2015-compiler-1.9.1.tgz"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["vuex", [
+        ["npm:3.6.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuex%2Fdownload%2Fvuex-3.6.0.tgz", {
+          "packageLocation": "./.yarn/cache/vuex-npm-3.6.0-64fe192683-809226864e.zip/node_modules/vuex/",
+          "packageDependencies": [
+            ["vuex", "npm:3.6.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuex%2Fdownload%2Fvuex-3.6.0.tgz"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:3.6.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuex%2Fdownload%2Fvuex-3.6.0.tgz", {
+          "packageLocation": "./.yarn/$$virtual/vuex-virtual-57f214ebcb/0/cache/vuex-npm-3.6.0-64fe192683-809226864e.zip/node_modules/vuex/",
+          "packageDependencies": [
+            ["vuex", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:3.6.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuex%2Fdownload%2Fvuex-3.6.0.tgz"],
+            ["@types/vue", null],
+            ["vue", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz"]
+          ],
+          "packagePeers": [
+            "@types/vue",
+            "vue"
           ],
           "linkType": "HARD",
         }]
