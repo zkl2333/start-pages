@@ -7,6 +7,7 @@
 		"bulma": "^0.9.1",
 		"core-js": "^3.6.4",
 		"leancloud-storage": "^4.10.0",
+		"marked": "^1.2.8",
 		"regenerator-runtime": "^0.13.7",
 		"vue": "^2.6.11",
 		"vue-router": "^3.2.0",
@@ -23,6 +24,7 @@
 		"eslint-plugin-import": "^2.20.2",
 		"eslint-plugin-vue": "^6.2.2",
 		"node-sass": "^4.14.0",
+		"raw-loader": "^4.0.2",
 		"sass-loader": "^8.0.2",
 		"vue-template-compiler": "^2.6.12"
 	},

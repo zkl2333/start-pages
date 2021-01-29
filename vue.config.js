@@ -4,5 +4,15 @@ module.exports = {
 	},
 	css: {
 		sourceMap: true
+	},
+	configureWebpack: {
+		module: {
+			rules: [
+				{
+					test: /\.md$/,
+					loader: 'raw-loader'
+				}
+			]
+		}
 	}
 };

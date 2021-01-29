@@ -29,9 +29,9 @@
 				></button>
 			</div>
 		</div>
-		<navbar @reset="activeModal = true" :user="user"  />
+		<navbar @reset="activeModal = true" :user="user" />
 		<section class="section container">
-			<router-view />
+			<router-view class="router-page" />
 		</section>
 	</div>
 </template>
@@ -98,5 +98,13 @@ export default {
 .modal-card,
 .modal-content {
 	margin: 0 auto;
+}
+
+.router-page {
+	@media screen and (min-width: 960px) {
+		box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+		padding: 20px;
+	}
+	min-height: 80vh;
 }
 </style>

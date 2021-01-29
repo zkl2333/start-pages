@@ -49,7 +49,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:2.22.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-import%2Fdownload%2Feslint-plugin-import-2.22.1.tgz"],
             ["eslint-plugin-vue", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:6.2.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-vue%2Fdownload%2Feslint-plugin-vue-6.2.2.tgz"],
             ["leancloud-storage", "npm:4.10.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fleancloud-storage%2Fdownload%2Fleancloud-storage-4.10.0.tgz"],
+            ["marked", "npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz"],
             ["node-sass", "npm:4.14.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-sass%2Fdownload%2Fnode-sass-4.14.1.tgz"],
+            ["raw-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz"],
             ["regenerator-runtime", "npm:0.13.7::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.7.tgz"],
             ["sass-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:8.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-8.0.2.tgz"],
             ["vue", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz"],
@@ -3036,7 +3038,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["portfinder", "npm:1.0.28::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fportfinder%2Fdownload%2Fportfinder-1.0.28.tgz"],
             ["postcss-loader", "npm:3.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-loader%2Fdownload%2Fpostcss-loader-3.0.0.tgz"],
             ["pug-plain-loader", null],
-            ["raw-loader", null],
+            ["raw-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz"],
             ["sass-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:8.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-8.0.2.tgz"],
             ["ssri", "npm:7.1.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fssri%2Fdownload%2Fssri-7.1.0.tgz"],
             ["stylus-loader", null],
@@ -9779,6 +9781,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["marked", [
+        ["npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz", {
+          "packageLocation": "./.yarn/cache/marked-npm-1.2.8-b770cd5354-929a651833.zip/node_modules/marked/",
+          "packageDependencies": [
+            ["marked", "npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["md5", [
         ["npm:2.3.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmd5%2Fdownload%2Fmd5-2.3.0.tgz", {
           "packageLocation": "./.yarn/cache/md5-npm-2.3.0-fb7f63eef6-ba00eaf2b7.zip/node_modules/md5/",
@@ -12206,6 +12217,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["raw-loader", [
+        ["npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz", {
+          "packageLocation": "./.yarn/cache/raw-loader-npm-4.0.2-7fdb7d50c6-1a08968df5.zip/node_modules/raw-loader/",
+          "packageDependencies": [
+            ["raw-loader", "npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz", {
+          "packageLocation": "./.yarn/$$virtual/raw-loader-virtual-cd3d862f6b/0/cache/raw-loader-npm-4.0.2-7fdb7d50c6-1a08968df5.zip/node_modules/raw-loader/",
+          "packageDependencies": [
+            ["raw-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz"],
+            ["@types/webpack", null],
+            ["loader-utils", "npm:2.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Floader-utils%2Fdownload%2Floader-utils-2.0.0.tgz"],
+            ["schema-utils", "npm:3.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fschema-utils%2Fdownload%2Fschema-utils-3.0.0.tgz"],
+            ["webpack", null]
+          ],
+          "packagePeers": [
+            "@types/webpack",
+            "webpack"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["read-pkg", [
         ["npm:1.1.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fread-pkg%2Fdownload%2Fread-pkg-1.1.0.tgz", {
           "packageLocation": "./.yarn/cache/read-pkg-npm-1.1.0-a1525ce940-01fdadf10e.zip/node_modules/read-pkg/",
@@ -12826,6 +12861,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ajv-keywords", "virtual:a06248938e0ae7b71c42d5ddc8d214f9ba6aee0ce451a00cc4d8908fd63a4496f9718e410c3ffbf3ba671de80b30ca2589060c47926cf21323ff14088d009d8a#npm:3.5.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fajv-keywords%2Fdownload%2Fajv-keywords-3.5.2.tgz"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:3.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fschema-utils%2Fdownload%2Fschema-utils-3.0.0.tgz", {
+          "packageLocation": "./.yarn/cache/schema-utils-npm-3.0.0-3b7642a1fe-a084f593f2.zip/node_modules/schema-utils/",
+          "packageDependencies": [
+            ["schema-utils", "npm:3.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fschema-utils%2Fdownload%2Fschema-utils-3.0.0.tgz"],
+            ["@types/json-schema", "npm:7.0.7::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fjson-schema%2Fdownload%2F%40types%2Fjson-schema-7.0.7.tgz"],
+            ["ajv", "npm:6.12.6::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fajv%2Fdownload%2Fajv-6.12.6.tgz"],
+            ["ajv-keywords", "virtual:a06248938e0ae7b71c42d5ddc8d214f9ba6aee0ce451a00cc4d8908fd63a4496f9718e410c3ffbf3ba671de80b30ca2589060c47926cf21323ff14088d009d8a#npm:3.5.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fajv-keywords%2Fdownload%2Fajv-keywords-3.5.2.tgz"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["scss-tokenizer", [
@@ -13425,7 +13470,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:2.22.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-import%2Fdownload%2Feslint-plugin-import-2.22.1.tgz"],
             ["eslint-plugin-vue", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:6.2.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-vue%2Fdownload%2Feslint-plugin-vue-6.2.2.tgz"],
             ["leancloud-storage", "npm:4.10.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fleancloud-storage%2Fdownload%2Fleancloud-storage-4.10.0.tgz"],
+            ["marked", "npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz"],
             ["node-sass", "npm:4.14.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-sass%2Fdownload%2Fnode-sass-4.14.1.tgz"],
+            ["raw-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz"],
             ["regenerator-runtime", "npm:0.13.7::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.7.tgz"],
             ["sass-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:8.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fsass-loader%2Fdownload%2Fsass-loader-8.0.2.tgz"],
             ["vue", "npm:2.6.12::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz"],
