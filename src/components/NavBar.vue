@@ -12,11 +12,11 @@
 			<div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': active }">
 				<div class="navbar-end" @click="active = false">
 					<router-link exact-active-class="is-active" class="navbar-item" to="/"
-						>Home</router-link
+						>首页</router-link
 					>
 					<!-- <a class="navbar-item" @click="reset">重置</a> -->
-					<a class="navbar-item" target="_blank" href="https://github.com/zkl2333/start"
-						>GitHub</a
+					<router-link exact-active-class="is-active" class="navbar-item" to="/about"
+						>关于</router-link
 					>
 					<template v-if="user.lsLogin">
 						<a class="navbar-item">{{ user.username }}</a>
