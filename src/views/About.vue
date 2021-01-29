@@ -23,6 +23,9 @@ export default {
 <style lang="scss" scoped>
 .about::v-deep {
 	.markdown-body {
+		del {
+			color: #999;
+		}
 		p {
 			margin-top: 0;
 			margin-bottom: 16px;
