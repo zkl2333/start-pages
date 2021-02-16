@@ -7715,12 +7715,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"marked@npm:^1.2.8":
-  version: 1.2.8
-  resolution: "marked@npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz"
+"marked@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "marked@npm:2.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-2.0.0.tgz"
   bin:
     marked: bin/marked
-  checksum: 929a651833a463838fcd1deca5fb5bb5d471432782af018d3476929ef3d7acbe7a2858cc5fb2a74d51d8af49e3d3e554c6a69e14cc914d1990243136f7f331ac
+  checksum: 5b3b13b9b68beb126284d04fedeacee37c847618c091cf575eaa32746cf0af2d65b1ed25b2cc9269b0cdffa2e8dc5aa2daacff81ead68c59a7a6a1656f1d28ed
   languageName: node
   linkType: hard
 
@@ -11049,7 +11049,7 @@ fsevents@~2.3.1:
     eslint-plugin-import: ^2.20.2
     eslint-plugin-vue: ^6.2.2
     leancloud-storage: ^4.10.0
-    marked: ^1.2.8
+    marked: ^2.0.0
     node-sass: ^4.14.0
     raw-loader: ^4.0.2
     regenerator-runtime: ^0.13.7

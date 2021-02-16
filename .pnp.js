@@ -49,7 +49,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:2.22.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-import%2Fdownload%2Feslint-plugin-import-2.22.1.tgz"],
             ["eslint-plugin-vue", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:6.2.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-vue%2Fdownload%2Feslint-plugin-vue-6.2.2.tgz"],
             ["leancloud-storage", "npm:4.10.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fleancloud-storage%2Fdownload%2Fleancloud-storage-4.10.0.tgz"],
-            ["marked", "npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz"],
+            ["marked", "npm:2.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-2.0.0.tgz"],
             ["node-sass", "npm:4.14.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-sass%2Fdownload%2Fnode-sass-4.14.1.tgz"],
             ["raw-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz"],
             ["regenerator-runtime", "npm:0.13.7::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.7.tgz"],
@@ -9782,10 +9782,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["marked", [
-        ["npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz", {
-          "packageLocation": "./.yarn/cache/marked-npm-1.2.8-b770cd5354-929a651833.zip/node_modules/marked/",
+        ["npm:2.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-2.0.0.tgz", {
+          "packageLocation": "./.yarn/cache/marked-npm-2.0.0-719c72f1b8-5b3b13b9b6.zip/node_modules/marked/",
           "packageDependencies": [
-            ["marked", "npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz"]
+            ["marked", "npm:2.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-2.0.0.tgz"]
           ],
           "linkType": "HARD",
         }]
@@ -13470,7 +13470,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-import", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:2.22.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-import%2Fdownload%2Feslint-plugin-import-2.22.1.tgz"],
             ["eslint-plugin-vue", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:6.2.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-vue%2Fdownload%2Feslint-plugin-vue-6.2.2.tgz"],
             ["leancloud-storage", "npm:4.10.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fleancloud-storage%2Fdownload%2Fleancloud-storage-4.10.0.tgz"],
-            ["marked", "npm:1.2.8::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-1.2.8.tgz"],
+            ["marked", "npm:2.0.0::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fmarked%2Fdownload%2Fmarked-2.0.0.tgz"],
             ["node-sass", "npm:4.14.1::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fnode-sass%2Fdownload%2Fnode-sass-4.14.1.tgz"],
             ["raw-loader", "virtual:9d68e729bd1ad8df8f8c251447458e319bd88cfdc87e2fa68888419d49ae181c05df225e787610ddb5708dd28a75da3055af6bf2bba41b041bcdffd48e0aea5f#npm:4.0.2::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fraw-loader%2Fdownload%2Fraw-loader-4.0.2.tgz"],
             ["regenerator-runtime", "npm:0.13.7::__archiveUrl=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.7.tgz"],
